@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pesquisar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <a href="index.html" class="logo-small">Fatia Nobre</a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre nós</a>
+      <a href="cardapio.html">Cardápio</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main class="conteudo">
+    <h1>Pesquisar</h1>
+    <form action="pesquisa.html" method="GET">
+      <input type="text" name="q" placeholder="Digite o que procura..." />
+      <button type="submit">Buscar</button>
+    </form>
+
+    <div class="resultado-pesquisa">
+      <!-- Aqui mostraremos o resultado -->
+      <script>
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get('q');
+        if (query) {
+          document.write("<p>Você pesquisou por: <strong>" + query + "</strong></p>");
+        }
+      </script>
+    </div>
+  </main>
+</body>
+</html>
